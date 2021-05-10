@@ -25,7 +25,7 @@ SECRET_KEY = 'qa&ks3r28l$#1l14k-s1^hnmb2hz!tzq&8&#q!z-z0+cy%vg7!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tienda-futbol.herokuapp.com'] para servidos keroku!!!!!!!!!!
+ALLOWED_HOSTS = ['tienda-futbol.herokuapp.com'] # para servidos keroku!!!!!!!!!!
 
 #ALLOWED_HOSTS = []#para servidor xampp
 
