@@ -25,7 +25,9 @@ SECRET_KEY = 'qa&ks3r28l$#1l14k-s1^hnmb2hz!tzq&8&#q!z-z0+cy%vg7!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['tienda-futbol.herokuapp.com'] para servidos keroku!!!!!!!!!!
+
+ALLOWED_HOSTS = []#para servidor xampp
 
 
 # Application definition
@@ -38,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'webservices',
+    'rest_framework',
+    'gunicorn',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
@@ -74,16 +80,29 @@ WSGI_APPLICATION = 'VideosFutbol.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME':'TiendaVideosFutbol',
+#        'USER': 'root',
+#        'PASSWORD':'',
+#        'HOST':'127.0.0.1',
+#        'PORT':'3306',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'TiendaVideosFutbol',
-        'USER': 'root',
-        'PASSWORD':'',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.psycopg2',
+        'NAME':'d2lnfecm8d78fa',
+        'USER': 'frhrenbvtclzov',
+        'PASSWORD':'b6472a86c3e5ac76a53d11bf7bbfba8fe9483b51ed7a57c2aa2fedf2652a8c39',
+        'HOST':'ec2-3-215-57-87.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
+
+
 
 
 # Password validation
@@ -124,10 +143,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-#STATIC_ROOT = "static"
+#STATICFILES_DIRS = [
+#   BASE_DIR / "static",
+#]
+
+STATIC_ROOT = "static"
 
 #servidor de medios
 MEDIA_URL = '/media/'

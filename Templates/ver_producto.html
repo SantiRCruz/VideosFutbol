@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <h1>Ver detalle del producto</h1>
+    
+    <p>{{detalle.id}}</p>
+    <p>{{detalle.nombre}}</p>
+    <p>{{detalle.descripcion}}</p>
+    <p>{{detalle.precio}}</p>
+    <p>{{detalle.cantidad}}</p>
+    <p>{{detalle.activo}}</p>
+    <p><img src="/media/{{detalle.foto}}" alt="" width="80px" height="80px"></p>
+    <p>{{detalle.marca}}</p>
+      
+        <P>
+        {% for c in detalle.categorias.all %}
+            {{c}}
+            <br>
+        {% endfor %}
+        </P>
+
+    <a href="{% url 'productos_view' %}" class="btn btn-primary">Regresar a la lista de productos</a>
+{% endblock contenido %}
+    

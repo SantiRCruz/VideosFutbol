@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <h1>Lista de categorias</h1>
+
+    
+    <br>
+    <a href="{% url 'agregar_categoria' %}" class="btn btn-primary">agregar una categoria</a>
+   
+        <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for p in categorias  %}
+            <tr>
+                <th scope="row">{{p.id}}</th>         
+                <td>{{p.nombre}}</td>    
+                <td>
+                <a href="{% url 'ver_categoria_view' id_categoria=p.id %}" class="btn btn-info">Ver</a>
+                <a href="{% url 'eliminar_categoria_view' id_categoria=p.id %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'editar_categoria_view' id_categoria=p.id %}" class="btn btn-warning">Editar</a>
+              </td>
+            </tr>
+            {% endfor %}
+              
+            
+{% endblock contenido %}
+    

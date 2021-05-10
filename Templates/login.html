@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+    {%block titulo%}
+        Login
+    {%endblock titulo%}
+
+    {% block contenido%}
+    <h1>Login</h1>
+
+    {% if msj%}
+        <h5>{{msj}}</h5>
+    {% else %}
+
+    
+    <form class="" action="" method="POST">
+        {% csrf_token %}
+        {{formulario.as_p}}
+        <input type="submit" value="Iniciar Sesion">
+    </form>
+
+    
+
+        {% endif %}
+    {% endblock %}

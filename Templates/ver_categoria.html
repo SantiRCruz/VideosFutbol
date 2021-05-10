@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <h1>ver detalle de la Categoria </h1>
+
+    <p>{{detalle.id}}</p>
+    <p>{{detalle.nombre}}</p>
+
+    <a href="{% url 'categorias_view' %}" class="btn btn-primary">Regresar a la lista de categorias</a>
+{% endblock contenido %}
