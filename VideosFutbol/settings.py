@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'VideosFutbol.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME':'d2lnfecm8d78fa',
         'USER': 'frhrenbvtclzov',
         'PASSWORD':'b6472a86c3e5ac76a53d11bf7bbfba8fe9483b51ed7a57c2aa2fedf2652a8c39',
